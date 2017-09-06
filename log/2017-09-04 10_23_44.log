@@ -1,0 +1,54 @@
+[2017-09-04 10:24:02] [INFO] test_nopassword START:不输入原来的登录密码时，提示语检查
+[2017-09-04 10:24:37] [INFO] test_nopassword STOP
+[2017-09-04 10:24:45] [INFO] test_nonewpassword START:不填入新密码时的提示语检查
+[2017-09-04 10:25:22] [INFO] test_nonewpassword STOP
+[2017-09-04 10:25:30] [INFO] test_noconfirmpassword START:确认密码不填写时的提示信息检查
+[2017-09-04 10:25:48] [INFO] test_noconfirmpassword STOP
+[2017-09-04 10:25:57] [INFO] test_confirmpswdwrror START:确认密码和新密码不一致时的提示信息检查
+[2017-09-04 10:26:35] [INFO] test_confirmpswdwrror STOP
+[2017-09-04 10:26:42] [INFO] test_crrentpswderror START:原密码错误时的提示语检查
+[2017-09-04 10:27:20] [INFO] test_crrentpswderror STOP
+[2017-09-04 10:27:26] [INFO] newpassworderror START:新密码格式错误时的，提示信息检查
+[2017-09-04 10:27:44] [INFO] newpassworderror START
+[2017-09-04 10:27:50] [INFO] test_time START:切换时区后的检查
+[2017-09-04 10:28:44] [INFO] test_time STOP
+[2017-09-04 10:28:50] [INFO] test_firwareupdate START:固件格式错误时提示信息检查
+[2017-09-04 10:29:35] [INFO] 开始用autoit3脚本控制选择本地文件
+[2017-09-04 10:29:48] [ERROR] Traceback (most recent call last):
+  File "test_systemsetup.py", line 238, in test_firwareupdate
+    driver.find_element_by_id("btn_begin_upload").click()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 78, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 499, in _execute
+    return self._parent.execute(command, params)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+[2017-09-04 10:29:48] [INFO] test_firwareupdate STOP
+[2017-09-04 10:29:59] [INFO] test_reboot START:重启功能检查
+[2017-09-04 10:32:37] [INFO]  test_cancelreboot START:点击重启路由器后，点击取消，确认可以成功取消
+[2017-09-04 10:33:47] [ERROR] Traceback (most recent call last):
+  File "test_systemsetup.py", line 309, in test_cancelreboot
+    driver.find_element_by_id("lang_reboot").click()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 78, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 499, in _execute
+    return self._parent.execute(command, params)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+[2017-09-04 10:33:47] [INFO] test_cancelreboot STOP
+[2017-09-04 10:33:54] [INFO]  test_logout START:测试退出功能
+[2017-09-04 10:34:13] [INFO] test_logout STOP

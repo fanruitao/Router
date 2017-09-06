@@ -1,0 +1,1601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>墙壁式无线wifi测试</title>
+    <meta name="generator" content="HTMLTestRunner 0.8.2"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    
+<style type="text/css" media="screen">
+body        { font-family: verdana, arial, helvetica, sans-serif; font-size: 80%; }
+table       { font-size: 100%; }
+pre         { }
+
+/* -- heading ---------------------------------------------------------------------- */
+h1 {
+	font-size: 16pt;
+	color: gray;
+}
+.heading {
+    margin-top: 0ex;
+    margin-bottom: 1ex;
+}
+
+.heading .attribute {
+    margin-top: 1ex;
+    margin-bottom: 0;
+}
+
+.heading .description {
+    margin-top: 4ex;
+    margin-bottom: 6ex;
+}
+
+/* -- css div popup ------------------------------------------------------------------------ */
+a.popup_link {
+}
+
+a.popup_link:hover {
+    color: red;
+}
+
+.popup_window {
+    display: none;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    /*border: solid #627173 1px; */
+    padding: 10px;
+    background-color: #E6E6D6;
+    font-family: "Lucida Console", "Courier New", Courier, monospace;
+    text-align: left;
+    font-size: 8pt;
+    width: 500px;
+}
+
+}
+/* -- report ------------------------------------------------------------------------ */
+#show_detail_line {
+    margin-top: 3ex;
+    margin-bottom: 1ex;
+}
+#result_table {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid #777;
+}
+#header_row {
+    font-weight: bold;
+    color: white;
+    background-color: #777;
+}
+#result_table td {
+    border: 1px solid #777;
+    padding: 2px;
+}
+#total_row  { font-weight: bold; }
+.passClass  { background-color: #6c6; }
+.failClass  { background-color: #c60; }
+.errorClass { background-color: #c00; }
+.passCase   { color: #6c6; }
+.failCase   { color: #c60; font-weight: bold; }
+.errorCase  { color: #c00; font-weight: bold; }
+.hiddenRow  { display: none; }
+.testcase   { margin-left: 2em; }
+
+
+/* -- ending ---------------------------------------------------------------------- */
+#ending {
+}
+
+</style>
+
+</head>
+<body>
+<script language="javascript" type="text/javascript"><!--
+output_list = Array();
+
+/* level - 0:Summary; 1:Failed; 2:All */
+function showCase(level) {
+    trs = document.getElementsByTagName("tr");
+    for (var i = 0; i < trs.length; i++) {
+        tr = trs[i];
+        id = tr.id;
+        if (id.substr(0,2) == 'ft') {
+            if (level < 1) {
+                tr.className = 'hiddenRow';
+            }
+            else {
+                tr.className = '';
+            }
+        }
+        if (id.substr(0,2) == 'pt') {
+            if (level > 1) {
+                tr.className = '';
+            }
+            else {
+                tr.className = 'hiddenRow';
+            }
+        }
+    }
+}
+
+
+function showClassDetail(cid, count) {
+    var id_list = Array(count);
+    var toHide = 1;
+    for (var i = 0; i < count; i++) {
+        tid0 = 't' + cid.substr(1) + '.' + (i+1);
+        tid = 'f' + tid0;
+        tr = document.getElementById(tid);
+        if (!tr) {
+            tid = 'p' + tid0;
+            tr = document.getElementById(tid);
+        }
+        id_list[i] = tid;
+        if (tr.className) {
+            toHide = 0;
+        }
+    }
+    for (var i = 0; i < count; i++) {
+        tid = id_list[i];
+        if (toHide) {
+            document.getElementById('div_'+tid).style.display = 'none'
+            document.getElementById(tid).className = 'hiddenRow';
+        }
+        else {
+            document.getElementById(tid).className = '';
+        }
+    }
+}
+
+
+function showTestDetail(div_id){
+    var details_div = document.getElementById(div_id)
+    var displayState = details_div.style.display
+    // alert(displayState)
+    if (displayState != 'block' ) {
+        displayState = 'block'
+        details_div.style.display = 'block'
+    }
+    else {
+        details_div.style.display = 'none'
+    }
+}
+
+
+function html_escape(s) {
+    s = s.replace(/&/g,'&amp;');
+    s = s.replace(/</g,'&lt;');
+    s = s.replace(/>/g,'&gt;');
+    return s;
+}
+
+/* obsoleted by detail in <div>
+function showOutput(id, name) {
+    var w = window.open("", //url
+                    name,
+                    "resizable,scrollbars,status,width=800,height=450");
+    d = w.document;
+    d.write("<pre>");
+    d.write(html_escape(output_list[id]));
+    d.write("\n");
+    d.write("<a href='javascript:window.close()'>close</a>\n");
+    d.write("</pre>\n");
+    d.close();
+}
+*/
+--></script>
+
+<div class='heading'>
+<h1>墙壁式无线wifi测试</h1>
+<p class='attribute'><strong>Start Time:</strong> 2017-09-06 10:47:11</p>
+<p class='attribute'><strong>Duration:</strong> 0:24:40.006652</p>
+<p class='attribute'><strong>Status:</strong> Pass 34 Failure 4 Error 5</p>
+
+<p class='description'>用例执行情况:</p>
+</div>
+
+
+
+<p id='show_detail_line'>Show
+<a href='javascript:showCase(0)'>Summary</a>
+<a href='javascript:showCase(1)'>Failed</a>
+<a href='javascript:showCase(2)'>All</a>
+</p>
+<table id='result_table'>
+<colgroup>
+<col align='left' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+<col align='right' />
+</colgroup>
+<tr id='header_row'>
+    <td>ID</td>
+    <td>Test Group/Test case</td>
+    <td>Count</td>
+    <td>Pass</td>
+    <td>Fail</td>
+    <td>Error</td>
+    <td>View</td>	
+</tr>
+
+<tr class='errorClass'>
+	<td>case_id</td>
+    <td>test_lan.TestLan</td>
+    <td>10</td>
+    <td>8</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c1',10)">Detail</a></td>
+</tr>
+
+<tr id='pt1.1' class='hiddenRow'>
+	<td align='center'>005
+
+</td>
+    <td class='none'><div class='testcase'>test_changeip: 修改局域网ip 地址</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
+
+    <div id='div_pt1.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.1: caseid:005
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.2' class='hiddenRow'>
+	<td align='center'>002
+
+</td>
+    <td class='none'><div class='testcase'>test_defaultcheck: 默认项检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
+
+    <div id='div_pt1.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.2: caseid:002
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+	<td align='center'>010
+
+</td>
+    <td class='none'><div class='testcase'>test_dhcpclose: 关闭 dhcp 功能检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: caseid:010
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.4' class='none'>
+	<td align='center'>007
+T</td>
+    <td class='errorCase'><div class='testcase'>test_endlaniperror: 结束ip地址非法，提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.4')" >
+        error</a>
+
+    <div id='div_ft1.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.4: caseid:007
+Traceback (most recent call last):
+  File "E:\pyproject\test_lan.py", line 192, in test_endlaniperror
+    login(driver)
+  File "E:\pyproject\public\logIn.py", line 10, in login
+    driver.find_element_by_id("admin_Password1").send_keys(password)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 330, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 832, in find_element
+    'value': value})['value']
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"admin_Password1"}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.5' class='hiddenRow'>
+	<td align='center'>001
+
+</td>
+    <td class='none'><div class='testcase'>test_gotolan: 测试是否能成功跳转到局域网页面</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.5')" >
+        pass</a>
+
+    <div id='div_pt1.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.5: caseid:001
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft1.6' class='none'>
+	<td align='center'>009
+T</td>
+    <td class='failCase'><div class='testcase'>test_lanipinrange: 用例失败的原因是因为元素能定位到，但是拿不到值</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.6')" >
+        fail</a>
+
+    <div id='div_ft1.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft1.6: caseid:009
+Traceback (most recent call last):
+  File "E:\pyproject\test_lan.py", line 264, in test_lanipinrange
+    self.assertEqual(100,driver.find_element_by_id("startLanIp").text)
+AssertionError: 100 != ''
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.7' class='hiddenRow'>
+	<td align='center'>003
+
+</td>
+    <td class='none'><div class='testcase'>test_noip: 不输入IP 地址，检查提示信息</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.7')" >
+        pass</a>
+
+    <div id='div_pt1.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.7: caseid:003
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.8' class='hiddenRow'>
+	<td align='center'>008
+
+</td>
+    <td class='none'><div class='testcase'>test_startipbigger: 开始ip地址大于结束ip地址</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.8')" >
+        pass</a>
+
+    <div id='div_pt1.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.8: caseid:008
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.9' class='hiddenRow'>
+	<td align='center'>006
+
+</td>
+    <td class='none'><div class='testcase'>test_startlaniperror: 开始ip地址范围非法，提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.9')" >
+        pass</a>
+
+    <div id='div_pt1.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.9: caseid:006
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.10' class='hiddenRow'>
+	<td align='center'>004
+r</td>
+    <td class='none'><div class='testcase'>test_wrongip: 输入错误格式的ip地址，检查提示语</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.10')" >
+        pass</a>
+
+    <div id='div_pt1.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.10: caseid:004
+result:1
+result:2
+result:3
+result:4
+result:5
+result:6
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+	<td>case_id</td>
+    <td>test_login.TestLogIn: 登录首页测试用例</td>
+    <td>4</td>
+    <td>4</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c2',4)">Detail</a></td>
+</tr>
+
+<tr id='pt2.1' class='hiddenRow'>
+	<td align='center'>011
+
+</td>
+    <td class='none'><div class='testcase'>test_goto_login: 登录页跳转测试</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
+
+    <div id='div_pt2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.1: caseid:011
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.2' class='hiddenRow'>
+	<td align='center'>013
+
+</td>
+    <td class='none'><div class='testcase'>test_login_nopasswordenter: 不输入密码时的提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.2')" >
+        pass</a>
+
+    <div id='div_pt2.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.2: caseid:013
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.3' class='hiddenRow'>
+	<td align='center'>012
+
+</td>
+    <td class='none'><div class='testcase'>test_login_right: 正确的密码登录</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.3')" >
+        pass</a>
+
+    <div id='div_pt2.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.3: caseid:012
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt2.4' class='hiddenRow'>
+	<td align='center'>014
+
+</td>
+    <td class='none'><div class='testcase'>test_login_wrongpassword: 输入错误密码</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.4')" >
+        pass</a>
+
+    <div id='div_pt2.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt2.4: caseid:014
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+	<td>case_id</td>
+    <td>test_systemsetup.TestSetup</td>
+    <td>12</td>
+    <td>10</td>
+    <td>1</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',12)">Detail</a></td>
+</tr>
+
+<tr id='pt3.1' class='hiddenRow'>
+	<td align='center'>025
+
+</td>
+    <td class='none'><div class='testcase'>test_cancelreboot: 点击重启路由器后，点击取消</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
+
+    <div id='div_pt3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.1: caseid:025
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.2' class='hiddenRow'>
+	<td align='center'>018
+
+</td>
+    <td class='none'><div class='testcase'>test_confirmpswdwrror: 确认密码和新密码不一致时的提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.2')" >
+        pass</a>
+
+    <div id='div_pt3.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.2: caseid:018
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.3' class='hiddenRow'>
+	<td align='center'>019
+
+</td>
+    <td class='none'><div class='testcase'>test_crrentpswderror: 原密码错误时的提示语检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.3')" >
+        pass</a>
+
+    <div id='div_pt3.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.3: caseid:019
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.4' class='hiddenRow'>
+	<td align='center'>023
+.</td>
+    <td class='none'><div class='testcase'>test_firwareupdate: 固件格式错误时提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.4')" >
+        pass</a>
+
+    <div id='div_pt3.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.4: caseid:023
+./upgrade/upload.exe E:\pyproject\upgrade\eeee.png
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.5' class='hiddenRow'>
+	<td align='center'>026
+
+</td>
+    <td class='none'><div class='testcase'>test_logout: 退出功能测试</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.5')" >
+        pass</a>
+
+    <div id='div_pt3.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.5: caseid:026
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.6' class='hiddenRow'>
+	<td align='center'>020
+
+</td>
+    <td class='none'><div class='testcase'>test_newpassworderror: 新密码格式错误时的，提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.6')" >
+        pass</a>
+
+    <div id='div_pt3.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.6: caseid:020
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.7' class='hiddenRow'>
+	<td align='center'>017
+
+</td>
+    <td class='none'><div class='testcase'>test_noconfirmpassword: 确认密码不填写时的提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.7')" >
+        pass</a>
+
+    <div id='div_pt3.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.7: caseid:017
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.8' class='hiddenRow'>
+	<td align='center'>016
+
+</td>
+    <td class='none'><div class='testcase'>test_nonewpassword: 不填入新密码时的提示语检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.8')" >
+        pass</a>
+
+    <div id='div_pt3.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.8: caseid:016
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.9' class='hiddenRow'>
+	<td align='center'>015
+
+</td>
+    <td class='none'><div class='testcase'>test_nopassword: 不输入原密码时，直接点击保存，提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.9')" >
+        pass</a>
+
+    <div id='div_pt3.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.9: caseid:015
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.10' class='none'>
+	<td align='center'>024
+T</td>
+    <td class='errorCase'><div class='testcase'>test_reboot: 重启功能检查，重启后，进入登录页</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.10')" >
+        error</a>
+
+    <div id='div_ft3.10' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.10').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.10: caseid:024
+Traceback (most recent call last):
+  File "E:\pyproject\test_systemsetup.py", line 313, in test_reboot
+    driver.find_element_by_id("btn_reboot_router").click()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 330, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 832, in find_element
+    'value': value})['value']
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"btn_reboot_router"}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt3.11' class='hiddenRow'>
+	<td align='center'>021
+
+</td>
+    <td class='none'><div class='testcase'>test_setpasswordright: 原密码错误时提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.11')" >
+        pass</a>
+
+    <div id='div_pt3.11' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.11').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt3.11: caseid:021
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft3.12' class='none'>
+	<td align='center'>022
+T</td>
+    <td class='failCase'><div class='testcase'>test_timezone: 切换时区后的检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.12')" >
+        fail</a>
+
+    <div id='div_ft3.12' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.12').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.12: caseid:022
+Traceback (most recent call last):
+  File "E:\pyproject\test_systemsetup.py", line 261, in test_timezone
+    self.assertEqual(driver.find_element_by_class_name('sbSelector').text,"CST-8 (EAT-北京，重庆，香港特别行政区，乌鲁木齐)")
+AssertionError: 'CST+7 (MST-北美山区标准时间)' != 'CST-8 (EAT-北京，重庆，香港特别行政区，乌鲁木齐)'
+- CST+7 (MST-北美山区标准时间)
++ CST-8 (EAT-北京，重庆，香港特别行政区，乌鲁木齐)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='passClass'>
+	<td>case_id</td>
+    <td>test_wan.TestWan</td>
+    <td>8</td>
+    <td>8</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',8)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+	<td align='center'>027
+
+</td>
+    <td class='none'><div class='testcase'>test_gotowan: 能否正确跳转</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:027
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.2' class='hiddenRow'>
+	<td align='center'>031
+
+</td>
+    <td class='none'><div class='testcase'>test_nogateway: 不输入默认网关时的提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.2')" >
+        pass</a>
+
+    <div id='div_pt4.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.2: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:031
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.3' class='hiddenRow'>
+	<td align='center'>028
+
+</td>
+    <td class='none'><div class='testcase'>test_noip: 不填入IP地址</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.3')" >
+        pass</a>
+
+    <div id='div_pt4.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.3: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:028
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.4' class='hiddenRow'>
+	<td align='center'>030
+
+</td>
+    <td class='none'><div class='testcase'>test_nomask: 不输入子网掩码的提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.4')" >
+        pass</a>
+
+    <div id='div_pt4.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.4: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:030
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.5' class='hiddenRow'>
+	<td align='center'>034
+
+</td>
+    <td class='none'><div class='testcase'>test_setwanmethod: 输入正确的wan 设置参数时能否成功保存检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.5')" >
+        pass</a>
+
+    <div id='div_pt4.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.5: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:034
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.6' class='hiddenRow'>
+	<td align='center'>033
+
+</td>
+    <td class='none'><div class='testcase'>test_wronggateway: 输入错误的默认网关时提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.6')" >
+        pass</a>
+
+    <div id='div_pt4.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.6: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:033
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.7' class='hiddenRow'>
+	<td align='center'>029
+
+</td>
+    <td class='none'><div class='testcase'>test_wrongip: 输入错误格式的ip 地址提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.7')" >
+        pass</a>
+
+    <div id='div_pt4.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.7: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:029
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt4.8' class='hiddenRow'>
+	<td align='center'>032
+
+</td>
+    <td class='none'><div class='testcase'>test_wrongmask: 输入错误的子网掩码时的提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.8')" >
+        pass</a>
+
+    <div id='div_pt4.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.8: &lt;DOM Element: wan at 0x36a3df0&gt;
+172.16.135.23
+caseid:032
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr class='errorClass'>
+	<td>case_id</td>
+    <td>test_wifi.TestWifi</td>
+    <td>9</td>
+    <td>4</td>
+    <td>2</td>
+    <td>3</td>
+    <td><a href="javascript:showClassDetail('c5',9)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+	<td align='center'>036
+
+</td>
+    <td class='none'><div class='testcase'>test_defaultargument: 默认项检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: caseid:036
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.2' class='hiddenRow'>
+	<td align='center'>035
+
+</td>
+    <td class='none'><div class='testcase'>test_gotowifi: 是否可以成功跳转到无线设置页面</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.2')" >
+        pass</a>
+
+    <div id='div_pt5.2' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.2: caseid:035
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.3' class='none'>
+	<td align='center'>039
+T</td>
+    <td class='errorCase'><div class='testcase'>test_nopassword: 不填写密码时的功能检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.3')" >
+        error</a>
+
+    <div id='div_ft5.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.3: caseid:039
+Traceback (most recent call last):
+  File "E:\pyproject\test_wifi.py", line 108, in test_nopassword
+    driver.find_element_by_id("password1_24").clear()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 93, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 499, in _execute
+    return self._parent.execute(command, params)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.4' class='none'>
+	<td align='center'>038
+T</td>
+    <td class='errorCase'><div class='testcase'>test_nowifiname: 不填写无线用户时的提示信息检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.4')" >
+        error</a>
+
+    <div id='div_ft5.4' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.4').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.4: caseid:038
+Traceback (most recent call last):
+  File "E:\pyproject\test_wifi.py", line 89, in test_nowifiname
+    driver.find_element_by_id('wifiName_24').clear()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 93, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 499, in _execute
+    return self._parent.execute(command, params)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.5' class='none'>
+	<td align='center'>042
+T</td>
+    <td class='errorCase'><div class='testcase'>test_wificlose: 关闭WiFi功能检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.5')" >
+        error</a>
+
+    <div id='div_ft5.5' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.5').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.5: caseid:042
+Traceback (most recent call last):
+  File "E:\pyproject\test_wifi.py", line 200, in test_wificlose
+    driver.find_element_by_id("clowifyconfirm2g").click()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 78, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 499, in _execute
+    return self._parent.execute(command, params)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.6' class='hiddenRow'>
+	<td align='center'>043
+
+</td>
+    <td class='none'><div class='testcase'>test_wifinamehide: 隐藏wifi 名字不被发现</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.6')" >
+        pass</a>
+
+    <div id='div_pt5.6' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.6').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.6: caseid:043
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.7' class='none'>
+	<td align='center'>037
+T</td>
+    <td class='failCase'><div class='testcase'>test_wifinameright: 各种组合下的无线名称是否支持</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.7')" >
+        fail</a>
+
+    <div id='div_ft5.7' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.7').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.7: caseid:037
+Traceback (most recent call last):
+  File "E:\pyproject\test_wifi.py", line 77, in test_wifinameright
+    self.assertEqual(len(wifiname), result, "目前失败的原因是input 元素取不到值")
+AssertionError: 9 != 0 : 目前失败的原因是input 元素取不到值
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='ft5.8' class='none'>
+	<td align='center'>041
+T</td>
+    <td class='failCase'><div class='testcase'>test_wifipasswordright: 格式正确的wifi 密码输入后是否可以成功保存</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.8')" >
+        fail</a>
+
+    <div id='div_ft5.8' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.8').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.8: caseid:041
+Traceback (most recent call last):
+  File "E:\pyproject\test_wifi.py", line 184, in test_wifipasswordright
+    self.assertEqual(len(wifipassword), result, "目前失败的原因是input 元素取不到值")
+AssertionError: 6 != 0 : 目前失败的原因是input 元素取不到值
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt5.9' class='hiddenRow'>
+	<td align='center'>040
+
+</td>
+    <td class='none'><div class='testcase'>test_wrongpassword: 无线密码错误，提示语检查</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.9')" >
+        pass</a>
+
+    <div id='div_pt5.9' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.9').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.9: caseid:040
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='total_row'>
+	<td></td>
+    <td>Total</td>
+    <td>43</td>
+    <td>34</td>
+    <td>4</td>
+    <td>5</td>
+    <td>&nbsp;</td>
+</tr>
+</table>
+
+<div id='ending'>&nbsp;</div>
+
+</body>
+</html>

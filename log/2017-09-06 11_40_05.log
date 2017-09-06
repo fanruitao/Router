@@ -1,0 +1,37 @@
+[2017-09-06 11:40:05] [INFO] test start
+[2017-09-06 11:40:10] [INFO] test_changeip:修改局域网ip 地址，并等待修改完重启后，新地址可以登录
+[2017-09-06 11:40:10] [INFO] 准备将登录修改为：192.168.0.2
+[2017-09-06 11:40:10] [INFO] 原来的登录地址为 192.168.0.1
+[2017-09-06 11:41:47] [INFO] 修改成功，二次登录
+[2017-09-06 11:41:56] [INFO] 登录后，进入新的配置系统，二次修改局域网ip 地址为原来的地址，
+[2017-09-06 11:43:09] [INFO] test_changeip STOP
+[2017-09-06 11:43:14] [INFO] test_defaultcheck START:局域网页面默认项检查
+[2017-09-06 11:43:28] [INFO] ###############
+[2017-09-06 11:43:28] [INFO] None
+[2017-09-06 11:43:28] [INFO] test_defaultcheck STOP
+[2017-09-06 11:43:33] [INFO] test_dhcpclose START:关闭dhcp功能，检查页面租期和范围不展示
+[2017-09-06 11:43:41] [INFO] test_dhcpclose STOP
+[2017-09-06 11:43:46] [INFO] test_endlaniperror START:结束ip地址非法，提示信息检查
+[2017-09-06 11:43:48] [INFO] 登录系统失败
+[2017-09-06 11:43:48] [ERROR] Traceback (most recent call last):
+  File "E:\pyproject\test_lan.py", line 193, in test_endlaniperror
+    login(driver)
+  File "E:\pyproject\public\logIn.py", line 10, in login
+    driver.find_element_by_id("admin_Password1").send_keys(password)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 330, in find_element_by_id
+    return self.find_element(by=By.ID, value=id_)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 832, in find_element
+    'value': value})['value']
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoSuchElementException: Message: no such element: Unable to locate element: {"method":"id","selector":"admin_Password1"}
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+[2017-09-06 11:43:55] [INFO] test_gotolan START:测试是否能成功跳转到局域网页面
+[2017-09-06 11:44:02] [INFO] 到达局域网页面后的URL:http://192.168.0.1/DhcpServer.html
+[2017-09-06 11:44:02] [INFO] test_gotolan STOP
+[2017-09-06 11:44:07] [INFO] test_lanipinrange START:ip地址填正确是否可以保存成功

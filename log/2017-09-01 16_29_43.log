@@ -1,0 +1,46 @@
+[2017-09-01 16:29:46] [INFO] test start
+[2017-09-01 16:30:01] [INFO] test_changeip:修改局域网ip 地址，并等待修改完重启后，新地址可以登录
+[2017-09-01 16:30:01] [INFO] 准备将登录修改为：192.168.0.2
+[2017-09-01 16:30:01] [INFO] 原来的登录地址为 192.168.0.1
+[2017-09-01 16:31:45] [INFO] test_defaultcheck START:局域网页面默认项检查
+[2017-09-01 16:32:38] [INFO] test_dhcpclose START:关闭dhcp功能，检查页面租期和范围不展示
+[2017-09-01 16:33:12] [INFO] test_endlaniperror START:结束ip地址非法，提示信息检查
+[2017-09-01 16:33:46] [INFO] test_gotolan START:测试是否能成功跳转到局域网页面
+[2017-09-01 16:34:21] [INFO] test_lanipinrange START:ip地址填正确是否可以保存成功
+[2017-09-01 16:35:15] [INFO] test_noip Start:不输入IP 地址，检查提示信息
+[2017-09-01 16:36:09] [INFO] test_startipbigger START:开始ip地址大于结束ip地址，提示信息检查
+[2017-09-01 16:36:43] [INFO] test_startlaniperror START:开始ip地址范围非法，提示信息检查
+[2017-09-01 16:37:37] [INFO] test_wrongip:输入错误格式的ip地址，检查提示语
+[2017-09-01 16:38:31] [INFO] test_goto_login START:登录页面第一个测试用例，测试是否能成功跳转到登录页面
+[2017-09-01 16:38:55] [INFO] URL 输入后的页面名称：192.168.0.1
+[2017-09-01 16:39:05] [INFO] test_login_nopasswordenter START:不输入密码时的提示信息检查
+[2017-09-01 16:39:39] [INFO] test_login_right START:输入正确的密码验证是否能成功登录
+[2017-09-01 16:40:24] [INFO] 192.168.0.1
+[2017-09-01 16:40:24] [INFO] 未登录之前的URL: http://192.168.0.1/
+[2017-09-01 16:40:32] [INFO] test_login_wrongpassword START:密码错误时的提示语检查
+[2017-09-01 16:41:05] [INFO]  test_cancelreboot START:点击重启路由器后，点击取消，确认可以成功取消
+[2017-09-01 16:41:39] [INFO] test_confirmpswdwrror START:确认密码和新密码不一致时的提示信息检查
+[2017-09-01 16:42:34] [INFO] test_crrentpswderror START:原密码错误时的提示语检查
+[2017-09-01 16:43:28] [INFO] test_firwareupdate START:固件格式错误时提示信息检查
+[2017-09-01 16:44:04] [INFO]  test_logout START:测试退出功能
+[2017-09-01 16:44:38] [INFO] newpassworderror START:新密码格式错误时的，提示信息检查
+[2017-09-01 16:45:12] [INFO] test_noconfirmpassword START:确认密码不填写时的提示信息检查
+[2017-09-01 16:46:06] [INFO] test_nonewpassword START:不填入新密码时的提示语检查
+[2017-09-01 16:47:04] [INFO] test_nopassword START:不输入原来的登录密码时，提示语检查
+[2017-09-01 16:47:38] [INFO] test_reboot START:重启功能检查
+[2017-09-01 16:48:12] [INFO] test_time START:切换时区后的检查
+[2017-09-01 16:48:46] [INFO] test_gotowan START:测试能否正确跳转到互联网设置页面
+[2017-09-01 16:49:40] [INFO] test_nogateway START:不输入默认网关时的提示信息检查
+[2017-09-01 16:50:35] [INFO] test_noip START:不输入IP地址，提示语检查
+[2017-09-01 16:51:08] [INFO] test_nomask START:不输入子网掩码的提示信息检查
+[2017-09-01 16:51:42] [INFO] test_setwanmethod START:输入正确的wan 设置参数时能否成功保存检查
+[2017-09-01 16:52:25] [INFO] test_wrongip START:输入错误格式的ip 地址提示信息检查
+[2017-09-01 16:53:35] [INFO] test_gotowifi START:是否可以成功跳转到无线设置页面
+[2017-09-01 16:54:30] [INFO] test_nopassword START:不填写密码时的功能检查
+[2017-09-01 16:55:23] [INFO] test_nowifiname START:不填写无线用户时的提示信息检查
+[2017-09-01 16:55:57] [INFO] test_wificlose START:关闭WiFi功能后，查看电脑的无线列表中是否还有wifi 信息
+[2017-09-01 16:56:51] [INFO] test_wifinamehide START:隐藏wifi 名字不被发现后，查看电脑的无线wifi列表 是否还有，无线名字 
+[2017-09-01 16:57:26] [INFO] test_wifinameright START:各种组合下的无线名称是否支持
+[2017-09-01 16:58:22] [INFO] test_wifipasswordright START:格式正确的wifi 密码输入后是否可以成功保存
+[2017-09-01 16:59:17] [INFO] test_wrongpassword START:错误的无线密码，提示信息检查
+[2017-09-01 16:59:43] [INFO] 发送邮件

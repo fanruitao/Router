@@ -1,0 +1,14 @@
+[2017-09-01 14:39:14] [INFO] test_goto_login START:登录页面第一个测试用例，测试是否能成功跳转到登录页面
+[2017-09-01 14:39:17] [INFO] URL 输入后的页面名称：DIR-823Pro
+[2017-09-01 14:39:17] [INFO] test_goto_login STOP
+[2017-09-01 14:39:29] [INFO] test_login_right START:输入正确的密码验证是否能成功登录
+[2017-09-01 14:39:32] [INFO] DIR-823Pro
+[2017-09-01 14:39:32] [INFO] 未登录之前的URL: http://192.168.0.1/Login.html
+[2017-09-01 14:39:37] [INFO] 登录成功后的URL:http://192.168.0.1/Home.html
+[2017-09-01 14:39:37] [INFO] test_login_right STOP
+[2017-09-01 14:39:45] [INFO] test_login_nopasswordenter START:不输入密码时的提示信息检查
+[2017-09-01 14:39:49] [INFO] 请输入登录密码。
+[2017-09-01 14:39:49] [INFO] test_login_nopasswordenter STOP
+[2017-09-01 14:39:57] [INFO] test_login_wrongpassword START:密码错误时的提示语检查
+[2017-09-01 14:40:01] [INFO] 密码错误，请重新输入。
+[2017-09-01 14:40:01] [INFO] test_login_wrongpassword STOP

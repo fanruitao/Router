@@ -1,0 +1,7 @@
+[2017-09-04 18:04:19] [INFO] test_goto_login START:登录页面第一个测试用例，测试是否能成功跳转到登录页面
+[2017-09-04 18:04:20] [INFO] URL 输入后的页面名称：
+[2017-09-04 18:04:39] [INFO] test_login_right START:输入正确的密码验证是否能成功登录
+[2017-09-04 18:05:03] [INFO] 
+[2017-09-04 18:05:03] [INFO] 未登录之前的URL: http://192.168.0.1/
+[2017-09-04 18:05:12] [INFO] test_login_nopasswordenter START:不输入密码时的提示信息检查
+[2017-09-04 18:05:22] [INFO] test_login_wrongpassword START:密码错误时的提示语检查

@@ -1,0 +1,3 @@
+[2017-09-05 14:58:33] [INFO] test_goto_login START:登录页面第一个测试用例，测试是否能成功跳转到登录页面
+[2017-09-05 14:58:50] [INFO] URL 输入后的页面名称：DIR-823Pro
+[2017-09-05 14:58:50] [INFO] test_goto_login STOP

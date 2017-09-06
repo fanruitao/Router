@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<G28D125>
+  <login rightpassword="iot123321" wrongpassword="123456" baseurl="http://192.168.0.1" />
+  <wan baseurl="http://192.168.0.1">
+    <static ipaddress="172.16.135.23" dns1="202.96.209.133" mask="255.255.255.0" gateway="172.16.135.254" />
+  </wan>
+  <lan baseurl="http://192.168.0.1">
+    <changeIP ip="192.168.0.2"></changeIP>
+  </lan>
+  <wifi baseurl="http://192.168.0.1" />
+  <setup baseurl="http://192.168.0.1">
+    <modifypassword currpassword="iot123321" newpassword="frt123321" />
+    <updatefw uploadpng="E:\pyproject\upgrade\eeee.png" />
+  </setup>
+  <emailaddress sendaddress="fanrt@gongniu.cn" receiveaddress="xinyuan123.sheng@163.com" ifsendmail="True" />
+</G28D125>

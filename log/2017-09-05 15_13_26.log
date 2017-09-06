@@ -1,0 +1,407 @@
+[2017-09-05 15:13:27] [INFO] test start
+[2017-09-05 15:13:35] [INFO] test_changeip:修改局域网ip 地址，并等待修改完重启后，新地址可以登录
+[2017-09-05 15:13:35] [INFO] 准备将登录修改为：192.168.0.2
+[2017-09-05 15:13:35] [INFO] 原来的登录地址为 192.168.0.1
+[2017-09-05 15:15:11] [INFO] 修改成功，二次登录
+[2017-09-05 15:15:21] [INFO] 登录后，进入新的配置系统，二次修改局域网ip 地址为原来的地址，
+[2017-09-05 15:16:36] [INFO] test_changeip STOP
+[2017-09-05 15:16:44] [INFO] test_defaultcheck START:局域网页面默认项检查
+[2017-09-05 15:16:53] [INFO] ###############
+[2017-09-05 15:16:53] [INFO] None
+[2017-09-05 15:16:53] [INFO] test_defaultcheck STOP
+[2017-09-05 15:17:00] [INFO] test_dhcpclose START:关闭dhcp功能，检查页面租期和范围不展示
+[2017-09-05 15:17:07] [INFO] test_dhcpclose STOP
+[2017-09-05 15:17:14] [INFO] test_endlaniperror START:结束ip地址非法，提示信息检查
+[2017-09-05 15:17:25] [INFO] test_endlaniperror STOP
+[2017-09-05 15:17:32] [INFO] test_gotolan START:测试是否能成功跳转到局域网页面
+[2017-09-05 15:17:40] [INFO] 到达局域网页面后的URL:http://192.168.0.1/DhcpServer.html
+[2017-09-05 15:17:40] [INFO] test_gotolan STOP
+[2017-09-05 15:17:47] [INFO] test_lanipinrange START:ip地址填正确是否可以保存成功
+[2017-09-05 15:18:05] [INFO] test_noip Start:不输入IP 地址，检查提示信息
+[2017-09-05 15:18:15] [INFO] test_noip STOP
+[2017-09-05 15:18:21] [INFO] test_startipbigger START:开始ip地址大于结束ip地址，提示信息检查
+[2017-09-05 15:18:32] [INFO] test_startipbigger STOP
+[2017-09-05 15:18:38] [INFO] test_startlaniperror START:开始ip地址范围非法，提示信息检查
+[2017-09-05 15:18:56] [INFO] test_wrongip:输入错误格式的ip地址，检查提示语
+[2017-09-05 15:20:03] [INFO] test_wrongip STOP
+[2017-09-05 15:20:10] [INFO] test_goto_login START:登录页面第一个测试用例，测试是否能成功跳转到登录页面
+[2017-09-05 15:20:12] [INFO] URL 输入后的页面名称：DIR-823Pro
+[2017-09-05 15:20:12] [INFO] test_goto_login STOP
+[2017-09-05 15:20:21] [INFO] test_login_nopasswordenter START:不输入密码时的提示信息检查
+[2017-09-05 15:20:23] [INFO] 请输入登录密码。
+[2017-09-05 15:20:23] [INFO] test_login_nopasswordenter STOP
+[2017-09-05 15:20:30] [INFO] test_login_right START:输入正确的密码验证是否能成功登录
+[2017-09-05 15:20:32] [INFO] DIR-823Pro
+[2017-09-05 15:20:32] [INFO] 未登录之前的URL: http://192.168.0.1/Login.html
+[2017-09-05 15:20:42] [INFO] 登录成功后的URL:http://192.168.0.1/Home.html
+[2017-09-05 15:20:42] [INFO] test_login_right STOP
+[2017-09-05 15:20:49] [INFO] test_login_wrongpassword START:密码错误时的提示语检查
+[2017-09-05 15:20:52] [INFO] 密码错误，请重新输入。
+[2017-09-05 15:20:52] [INFO] test_login_wrongpassword STOP
+[2017-09-05 15:20:59] [INFO]  test_cancelreboot START:点击重启路由器后，点击取消，确认可以成功取消
+[2017-09-05 15:21:15] [ERROR] Traceback (most recent call last):
+  File "E:\pyproject\test_systemsetup.py", line 321, in test_cancelreboot
+    driver.find_element_by_id('wifiName_24').clear()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 93, in clear
+    self._execute(Command.CLEAR_ELEMENT)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 499, in _execute
+    return self._parent.execute(command, params)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.InvalidElementStateException: Message: invalid element state: Element is not currently interactable and may not be manipulated
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+[2017-09-05 15:21:21] [ERROR] Traceback (most recent call last):
+  File "E:\pyproject\test_systemsetup.py", line 331, in test_cancelreboot
+    driver.find_element_by_id("saveconfirm2_5G").click()
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 78, in click
+    self._execute(Command.CLICK_ELEMENT)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webelement.py", line 499, in _execute
+    return self._parent.execute(command, params)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 297, in execute
+    self.error_handler.check_response(response)
+  File "C:\python\lib\site-packages\selenium\webdriver\remote\errorhandler.py", line 194, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.ElementNotVisibleException: Message: element not visible
+  (Session info: chrome=60.0.3112.113)
+  (Driver info: chromedriver=2.31.488763 (092de99f48a300323ecf8c2a4e2e7cab51de5ba8),platform=Windows NT 6.1.7601 SP1 x86_64)
+
+
+[2017-09-05 15:21:21] [INFO] test_cancelreboot STOP
+[2017-09-05 15:21:29] [INFO] test_confirmpswdwrror START:确认密码和新密码不一致时的提示信息检查
+[2017-09-05 15:22:07] [INFO] test_confirmpswdwrror STOP
+[2017-09-05 15:22:16] [INFO] test_crrentpswderror START:原密码错误时的提示语检查
+[2017-09-05 15:22:54] [INFO] test_crrentpswderror STOP
+[2017-09-05 15:23:02] [INFO] test_firwareupdate START:固件格式错误时提示信息检查
+[2017-09-05 15:23:19] [INFO] 开始用autoit3脚本控制选择本地文件
+[2017-09-05 15:23:33] [INFO] test_firwareupdate STOP
+[2017-09-05 15:23:40] [INFO]  test_logout START:测试退出功能
+[2017-09-05 15:23:59] [INFO] test_logout STOP
+[2017-09-05 15:24:06] [INFO] newpassworderror START:新密码格式错误时的，提示信息检查
+[2017-09-05 15:24:45] [INFO] newpassworderror START
+[2017-09-05 15:24:52] [INFO] test_noconfirmpassword START:确认密码不填写时的提示信息检查
+[2017-09-05 15:25:33] [INFO] test_noconfirmpassword STOP
+[2017-09-05 15:25:40] [INFO] test_nonewpassword START:不填入新密码时的提示语检查
+[2017-09-05 15:25:51] [INFO] test_nonewpassword STOP
+[2017-09-05 15:25:58] [INFO] test_nopassword START:不输入原来的登录密码时，提示语检查
+[2017-09-05 15:26:07] [INFO] test_nopassword STOP
+[2017-09-05 15:26:14] [INFO] test_reboot START:重启功能检查
+[2017-09-05 15:27:50] [INFO] test_reboot STOP
+[2017-09-05 15:27:58] [INFO] test_crrentpswderror START:原密码错误时的提示语检查
+[2017-09-05 15:30:03] [INFO] test_time START:切换时区后的检查
+[2017-09-05 15:30:50] [INFO] test_gotowan START:测试能否正确跳转到互联网设置页面
+[2017-09-05 15:31:05] [INFO] test_gotowan STOP
+[2017-09-05 15:31:13] [INFO] test_nogateway START:不输入默认网关时的提示信息检查
+[2017-09-05 15:31:40] [INFO] test_nogateway STOP
+[2017-09-05 15:31:48] [INFO] test_noip START:不输入IP地址，提示语检查
+[2017-09-05 15:32:13] [INFO] test_noip STOP
+[2017-09-05 15:32:21] [INFO] test_nomask START:不输入子网掩码的提示信息检查
+[2017-09-05 15:32:48] [INFO] test_nomask STOP
+[2017-09-05 15:32:56] [INFO] test_setwanmethod START:输入正确的wan 设置参数时能否成功保存检查
+[2017-09-05 15:33:32] [INFO] 修改完成后恢复到自动获取dhcp
+[2017-09-05 15:33:48] [INFO] test_setwanmethod STOP
+[2017-09-05 15:34:05] [INFO] test_wrongip START:输入错误格式的ip 地址提示信息检查
+[2017-09-05 15:34:57] [INFO] test_wrongip START
+[2017-09-05 15:35:19] [INFO] test_gotowifi START:是否可以成功跳转到无线设置页面
+[2017-09-05 15:35:36] [INFO] test_gotowifi STOP
+[2017-09-05 15:35:44] [INFO] test_nopassword START:不填写密码时的功能检查
+[2017-09-05 15:36:29] [INFO] None
+[2017-09-05 15:36:29] [INFO] test_nopassword STOP
+[2017-09-05 15:36:36] [INFO] test_nowifiname START:不填写无线用户时的提示信息检查
+[2017-09-05 15:37:01] [INFO] test_nowifiname STOP
+[2017-09-05 15:37:10] [INFO] test_wificlose START:关闭WiFi功能后，查看电脑的无线列表中是否还有wifi 信息
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:44] [INFO] no found
+[2017-09-05 15:37:55] [INFO] test_wificlose STOP
+[2017-09-05 15:38:04] [INFO] test_wifinamehide START:隐藏wifi 名字不被发现后，查看电脑的无线wifi列表 是否还有，无线名字 
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:10] [INFO] no found
+[2017-09-05 15:39:33] [INFO] test_wifinamehide STOP
+[2017-09-05 15:39:42] [INFO] test_wifinameright START:各种组合下的无线名称是否支持
+[2017-09-05 15:40:42] [INFO] 未保存成功
+[2017-09-05 15:41:19] [INFO] 未保存成功
+[2017-09-05 15:41:57] [INFO] 未保存成功
+[2017-09-05 15:42:34] [INFO] 未保存成功
+[2017-09-05 15:43:11] [INFO] 未保存成功
+[2017-09-05 15:43:49] [INFO] 未保存成功
+[2017-09-05 15:44:27] [INFO] 未保存成功
+[2017-09-05 15:45:05] [INFO] 未保存成功
+[2017-09-05 15:45:43] [INFO] 未保存成功
+[2017-09-05 15:45:53] [INFO] test_wifipasswordright START:格式正确的wifi 密码输入后是否可以成功保存
+[2017-09-05 15:46:45] [INFO] 未保存成功
+[2017-09-05 15:47:21] [INFO] 未保存成功
+[2017-09-05 15:47:56] [INFO] 未保存成功
+[2017-09-05 15:48:30] [INFO] 未保存成功
+[2017-09-05 15:49:04] [INFO] 未保存成功
+[2017-09-05 15:49:40] [INFO] 未保存成功
+[2017-09-05 15:49:48] [INFO] test_wrongpassword START:错误的无线密码，提示信息检查
+[2017-09-05 15:50:43] [INFO] test_wrongpassword STOP
+[2017-09-05 15:50:43] [INFO] 发送邮件
